@@ -17,7 +17,7 @@ class TurboFailureApp < Devise::FailureApp
   end
 
   def skip_format?
-    %w(html turbo_stream */*).include? request_format.to_s
+    %w[html turbo_stream */*].include? request_format.to_s
   end
 end
 ####### ---- ######
@@ -32,7 +32,7 @@ Devise.setup do |config|
   # config.secret_key = 'fb086f1ff2d26308341947bc2b414c8545b6e93b3b1b608609cc835600034684948f62513abf3dfc9a9740ef8f470cd0ea17a13c1f26721358dc985ef3d07020'
   #
   # ##### Add #####
-  config.parent_controller = 'TurboController'
+  config.parent_controller = "TurboDeviseController"
   config.navigational_formats = ['*/*', :html, :turbo_stream]
 
   # ==> Warden configuration
